@@ -23,18 +23,18 @@ void viewTasks() {
         }
     }
 
-    printf("%s", todosString);
+    printf_s("%s", todosString);
 }
 
 void addTask(const char* description) {
     // Check if the totalTasks is not within the maximum limit
     if (totalTasks >= MAX_TASKS) {
-        printf("Error: Maximum number of tasks reached. Task not added.\n");
+        printf_s("Error: Maximum number of tasks reached. Task not added.\n");
         return;
     }
 
     if (strlen(description) == 0) {
-        printf("Error: Task description is invalid. Task not added.\n");
+        printf_s("Error: Task description is invalid. Task not added.\n");
         return;
     }
 
@@ -47,12 +47,12 @@ void addTask(const char* description) {
     // Increment the totalTasks count
     totalTasks++;
 
-    printf("Task added successfully: %s\n", description);
+    printf_s("Task added successfully: %s\n", description);
 }
 
 void deleteTask(int taskIndex) {
     if (taskIndex < 0 || taskIndex >= totalTasks) {
-        printf("Error: Invalid task index. Task not deleted.\n");
+        printf_s("Error: Invalid task index. Task not deleted.\n");
         return;
     }
 
